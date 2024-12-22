@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Index Page</title>
+    <style>
+        /* 기본 스타일 */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center; /* 가로 중앙 정렬 */
+            align-items: center; /* 세로 중앙 정렬 */
+            height: 100vh; /* 화면 전체 높이 */
+            background-color: #f8f9fa; /* 배경색 */
+        }
+
+        .image-container {
+            display: flex; /* 이미지 가로 정렬 */
+            gap: 20px; /* 이미지 간 간격 */
+            justify-content: center; /* 이미지 중앙 정렬 */
+            align-items: center; /* 세로 축 정렬 */
+            width: 100%; /* 부모 컨테이너 너비 확장 */
+            height: 100%; /* 부모 컨테이너 높이 확장 */
+        }
+
+        .image-container img {
+            width: 100%; /* 부모 컨테이너에 맞게 너비 조정 */
+            max-width: 100%; /* 최대 크기 제한 */
+            height: 100%; /* 부모 컨테이너 높이에 맞게 */
+            object-fit: cover; /* 이미지 비율 유지하며 꽉 차게 */
+            display: block; /* 이미지를 블록 요소로 설정 */
+        }
+
+        /* 반응형 스타일: 화면 너비 480px 이하 */
+        @media (max-width: 480px) {
+            body {
+                flex-direction: column; /* 세로 정렬 */
+                padding: 0;
+            }
+
+            .image-container {
+                flex-direction: column; /* 이미지 세로 정렬 */
+                align-items: center; /* 가운데 정렬 */
+                gap: 10px; /* 이미지 간 간격 축소 */
+            }
+
+            .image-container img {
+                width: 100%; /* 화면 너비에 맞게 조정 */
+                height: auto; /* 높이는 비율 유지 */
+                max-width: 100%; /* 최대 크기 제한 */
+            }
+        }
+    /* 호버 시 커서와 확대 효과 */
+.image-container img:hover {
+    cursor: url('images/forcursor.png') 16 16, pointer; /* 커서를 이미지로 변경 */
+}
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <!-- 첫 번째 이미지 -->
+        <a href="page2.html">
+            <img src="images/page1.png" alt="Go to page2.html">
+        </a>
+    </div>
+    
+</body>
+</html>

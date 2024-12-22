@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 3</title>
+    <link rel="stylesheet" href="style.css?ver=1.0">
+
+    <style>
+        /* 초기화 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('images/bg.png') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        /* 왼쪽 상단 고정 이미지 컨테이너 */
+        .image-container {
+            position: fixed; /* 화면 좌측 상단 고정 */
+            top: 10px;
+            left: 10px;
+            display: flex;
+            flex-direction: column; /* 세로로 정렬 */
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .image-container img {
+            max-width: 50px;
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.1);
+        }
+
+        /* 중앙 콘텐츠 */
+        .menu-container {
+            display: flex;
+            flex-direction: column; /* 세로 정렬 */
+            align-items: center; /* 가로 중앙 정렬 */
+            justify-content: center; /* 세로 중앙 정렬 */
+            margin-top: 100px; /* 상단 고정 이미지와 겹치지 않도록 여백 */
+            gap: 20px;
+            text-align: center; /* 텍스트 중앙 정렬 */
+        }
+
+        .menu-container img {
+            max-width: 90%; /* 이미지 기본 크기 */
+            height: auto;
+        }
+
+        /* 반응형 디자인 */
+
+        /* 화면 너비 768px 이하 */
+        @media (max-width: 768px) {
+            .menu-container img {
+                max-width: 80%; /* 이미지 크기 줄이기 */
+            }
+
+            .menu-container {
+                gap: 15px; /* 이미지 간 간격 줄이기 */
+            }
+        }
+
+        /* 화면 너비 480px 이하 */
+        @media (max-width: 480px) {
+            .image-container img {
+                max-width: 40px; /* 왼쪽 상단 고정 이미지 크기 축소 */
+            }
+
+            .menu-container img {
+                max-width: 100%; /* 화면 너비에 맞게 이미지 크기 조정 */
+            }
+
+            .menu-container {
+                gap: 10px; /* 이미지 간 간격 축소 */
+            }
+        }
+    </style>
+</head>
+<body class="page3">
+    <!-- 왼쪽 상단 고정 이미지 -->
+    <div class="image-container">
+        <a href="index.html">
+            <img class="go1" src="images/go1.png" alt="Go to Page 2">
+        </a>
+        <a href="page2.html">
+            <img class="goback" src="images/goback.png" alt="Go Back to Page 1">
+        </a>
+    </div>
+
+    <!-- 중앙 콘텐츠 -->
+    <div class="menu-container">
+        <!-- cbody 클릭 시 페이지 5로 이동 -->
+        <a href="page5.html">
+            <img src="images/cbody.png" alt="cbody">
+        </a>
+    </div>
+</body>
+</html>

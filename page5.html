@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout</title>
+    <link rel="stylesheet" href="style.css?ver=1.0">
+
+    <style>
+        /* 초기화 스타일 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('images/bg.png') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        /* 왼쪽 상단 고정 이미지 */
+        .fixed-container {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 10;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-bottom-right-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .fixed-container img {
+            max-width: 50px;
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .fixed-container img:hover {
+            transform: scale(1.1);
+        }
+
+        /* 중앙 이미지 컨테이너 */
+        .image-container {
+            display: flex;
+            flex-wrap: wrap; /* 여러 줄로 나눠 정렬 */
+            justify-content: center; /* 가로 중앙 정렬 */
+            gap: 20px; /* 이미지 간 간격 */
+            margin-top: 100px; /* 상단 고정 요소와 간격 유지 */
+            padding: 20px;
+        }
+
+        .image-container img {
+            flex: 1 1 calc(33.333% - 20px); /* 기본적으로 한 줄에 3개 */
+            max-width: calc(33.333% - 20px); /* 최대 크기 제한 */
+            height: auto;
+            transition: transform 0.3s;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.05);
+        }
+
+        /* 반응형 스타일 */
+        @media (max-width: 768px) {
+            .image-container img {
+                flex: 1 1 calc(50% - 20px); /* 한 줄에 2개 */
+                max-width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .image-container img {
+                flex: 1 1 100%; /* 한 줄에 1개 */
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 왼쪽 상단 고정 이미지 -->
+    <div class="fixed-container">
+        <a href="index.html">
+            <img src="images/go1.png" alt="Go to Page 2">
+        </a>
+        <a href="page3.html">
+            <img src="images/goback.png" alt="Go Back to Page 1">
+        </a>
+    </div>
+
+    <!-- 중앙 이미지 컨테이너 -->
+    <div class="image-container">
+        <img src="images/acow/c1.png" alt="Image c1">
+        <img src="images/acow/c2.png" alt="Image c2">
+        <img src="images/acow/c3.png" alt="Image c3">
+        <img src="images/acow/c4.png" alt="Image c4">
+        <img src="images/acow/c5.png" alt="Image c5">
+        <img src="images/acow/c6.png" alt="Image c6">
+        <img src="images/acow/c7.png" alt="Image c7">
+        <img src="images/acow/c8.png" alt="Image c8">
+        <img src="images/acow/c9.png" alt="Image c9">
+        <img src="images/acow/c10.png" alt="Image c10">
+    </div>
+</body>
+</html>

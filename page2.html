@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 2</title>
+    <link rel="stylesheet" href="style.css?ver=1.0">
+
+    <style>
+        /* 초기화 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('images/bg.png') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        /* 왼쪽 상단 고정 이미지 컨테이너 */
+        .image-container {
+            position: fixed; /* 화면 좌측 상단 고정 */
+            top: 10px;
+            left: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .image-container img {
+            max-width: 50px;
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.1);
+        }
+
+        /* 메뉴 섹션 */
+        .menu-container {
+            display: flex;
+            flex-direction: column; /* 세로 정렬 */
+            align-items: center; /* 가로 중앙 정렬 */
+            justify-content: center; /* 세로 중앙 정렬 */
+            gap: 20px; /* 이미지 간 간격 */
+            margin-top: 100px; /* 상단 여백 */
+            text-align: center; /* 텍스트 중앙 정렬 */
+        }
+
+        .menu-container img {
+            max-width: 90%; /* 기본 이미지 크기: 화면 너비의 90% */
+            height: auto;
+            transition: transform 0.3s ease-in-out; /* 부드러운 크기 변경 효과 */
+        }
+
+        /* 반응형 디자인 */
+
+        /* 화면 너비 1024px 이하 */
+        @media (max-width: 1024px) {
+            .menu-container img {
+                max-width: 80%; /* 이미지 크기 줄이기 */
+            }
+
+            .menu-container {
+                gap: 15px; /* 이미지 간 간격 줄이기 */
+            }
+        }
+
+        /* 화면 너비 768px 이하 */
+        @media (max-width: 768px) {
+            .image-container img {
+                max-width: 45px; /* 왼쪽 상단 고정 이미지 축소 */
+            }
+
+            .menu-container img {
+                max-width: 70%; /* 이미지 크기 줄이기 */
+            }
+
+            .menu-container {
+                gap: 12px; /* 이미지 간 간격 줄이기 */
+            }
+        }
+
+        /* 화면 너비 480px 이하 */
+        @media (max-width: 480px) {
+            .image-container img {
+                max-width: 40px; /* 왼쪽 상단 고정 이미지 크기 축소 */
+            }
+
+            .menu-container img {
+                max-width: 100%; /* 화면 너비에 맞게 이미지 크기 조정 */
+            }
+
+            .menu-container {
+                gap: 10px; /* 이미지 간 간격 축소 */
+            }
+        }
+    </style>
+</head>
+<body class="page2">
+    <!-- 왼쪽 상단 고정 이미지 -->
+    <div class="image-container">
+        <a href="index.html">
+            <img class="goback" src="images/goback.png" alt="Go Back to Page 1">
+        </a>
+        <a href="index.html">
+            <img class="go1" src="images/go1.png" alt="Go to Page 3">
+        </a>
+    </div>
+
+    <!-- 메뉴 섹션 -->
+    <div class="menu-container">
+        <img src="images/impage2/list.png" alt="Menu Description">
+        <a href="page3.html">
+            <img src="images/impage2/cow.png" alt="Go to Page 3">
+        </a>
+        <a href="page4.html">
+            <img src="images/impage2/pig.png" alt="Go to Page 4">
+        </a>
+    </div>
+</body>
+</html>
