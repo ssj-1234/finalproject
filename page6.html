@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page 6 - Responsive Layout</title>
-    <link rel="stylesheet" href="style.css?ver=1.0">
 
     <style>
         /* 초기화 스타일 */
@@ -16,7 +15,6 @@
 
         body {
             background-color: #f8f9fa;
-            margin: 0;
             font-family: Arial, sans-serif;
             background: url('images/bg.png') no-repeat center center fixed;
             background-size: cover;
@@ -54,7 +52,8 @@
             flex-wrap: wrap; /* 여러 줄로 나눠 정렬 */
             justify-content: center; /* 가로 중앙 정렬 */
             gap: 20px; /* 이미지 간 간격 */
-            margin-top: 100px; /* 상단 고정 요소와 간격 유지 */
+            margin: 100px auto; /* 고정 요소와 간격 유지 */
+            max-width: 1200px; /* 컨테이너 최대 너비 */
             padding: 20px;
         }
 
@@ -62,11 +61,14 @@
             flex: 1 1 calc(33.333% - 20px); /* 기본적으로 한 줄에 3개 */
             max-width: calc(33.333% - 20px); /* 최대 크기 제한 */
             height: auto;
-            transition: transform 0.3s;
+            border-radius: 8px; /* 둥근 모서리 */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 약간의 그림자 */
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .image-container img:hover {
-            transform: scale(1.05);
+            transform: scale(1.05); /* 확대 효과 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         /* 반응형 디자인 */
@@ -115,3 +117,4 @@
     </div>
 </body>
 </html>
+
